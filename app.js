@@ -20,8 +20,8 @@ app.use(bodyParser.json());
 
 connectDB();
 app.use(express.json({ extended: false }));
-app.use('/api/createEmployee', require('./Api/Employee'));
-app.use('/api/getAllEmployees',require('./Api/Employee'));
+app.use('/api/createEmployee', require('./API/Employee'));
+app.use('/api/getAllEmployees',require('./API/Employee'));
 app.get('/',(req,res)=>{
   res.send("This is working")
 })
