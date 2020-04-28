@@ -4,7 +4,7 @@
   "description": "majorly using for sending mails",
   "main": "app.js",
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
