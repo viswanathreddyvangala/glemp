@@ -22,6 +22,9 @@ connectDB();
 app.use(express.json({ extended: false }));
 app.use('/api/createEmployee', require('./Api/Employee'));
 app.use('/api/getAllEmployees',require('./Api/Employee'));
+app.get('/',(req,res)=>{
+  res.send("This is working")
+})
 
 app.post('/sendemail',(req,res)=>{
     console.log(req.body)
