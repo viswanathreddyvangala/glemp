@@ -3,7 +3,7 @@ const bodyParser  =  require('body-parser');
 const exphbrs  =  require('express-handlebars');
 const nodemailer = require('nodemailer')
 const cors = require('cors');
-const port  = process.env.port || 5000;
+const PORT  = process.env.port || 5000;
 //const connectDB = require("./DB/connectiondb")
 
 var app = express();
@@ -57,6 +57,6 @@ app.post('/sendemail',(req,res)=>{
 
 })
 
-app.listen(5000, ()=>{
+app.listen(PORT, ()=>{
     console.log("server started")
 }) 
