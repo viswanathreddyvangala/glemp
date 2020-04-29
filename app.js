@@ -5,14 +5,12 @@ const nodemailer = require('nodemailer')
 const cors = require('cors');
 const PORT  = process.env.port || 5000;
 var path = require("path");
-var serveStatic = require('serve-static')
 
-//const connectDB = require("./DB/connectiondb")
+const connectDB = require("./DB/connectiondb")
 
 var app = express();
  
 app.use(cors());
-app.use(serveStatic(path.join(__dirname, 'dist')))
 
 app.engine('handlebars',exphbrs());
 app.set('view engine','handlebars');
@@ -22,10 +20,10 @@ app.set('view engine','handlebars');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-//connectDB();
+connectDB();
 app.use(express.json({ extended: false }));
-// app.use('/api/createEmployee', require('./API/Employee'));
-// app.use('/api/getAllEmployees',require('./API/Employee'));
+app.use('/api/createEmployee', require('./API/Employee'));
+app.use('/api/getAllEmployees',require('./API/Employee'));
 app.get('/',(req,res)=>{
   res.send("This is working")
 })
