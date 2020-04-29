@@ -4,7 +4,7 @@
   "description": "majorly using for sending mails",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "npm run build && node app.js"
   },
   
 "engines": {

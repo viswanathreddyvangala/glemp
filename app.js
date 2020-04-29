@@ -4,11 +4,15 @@ const exphbrs  =  require('express-handlebars');
 const nodemailer = require('nodemailer')
 const cors = require('cors');
 const PORT  = process.env.port || 5000;
+var path = require("path");
+var serveStatic = require('serve-static')
+
 //const connectDB = require("./DB/connectiondb")
 
 var app = express();
  
 app.use(cors());
+app.use(serveStatic(path.join(__dirname, 'dist')))
 
 app.engine('handlebars',exphbrs());
 app.set('view engine','handlebars');
@@ -58,5 +62,6 @@ app.post('/sendemail',(req,res)=>{
 })
 
 app.listen(PORT, ()=>{
-    console.log("server started")
+  
+    console.log("server connected on ",PORT )
 }) 
