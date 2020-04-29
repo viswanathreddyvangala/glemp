@@ -4,7 +4,7 @@ const exphbrs  =  require('express-handlebars');
 const nodemailer = require('nodemailer')
 const cors = require('cors');
 const port  = process.env.port || 5000;
-const connectDB = require("./DB/connectiondb")
+//const connectDB = require("./DB/connectiondb")
 
 var app = express();
  
@@ -18,10 +18,10 @@ app.set('view engine','handlebars');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-connectDB();
+//connectDB();
 app.use(express.json({ extended: false }));
-app.use('/api/createEmployee', require('./API/Employee'));
-app.use('/api/getAllEmployees',require('./API/Employee'));
+// app.use('/api/createEmployee', require('./API/Employee'));
+// app.use('/api/getAllEmployees',require('./API/Employee'));
 app.get('/',(req,res)=>{
   res.send("This is working")
 })
